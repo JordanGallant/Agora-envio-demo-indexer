@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=./node_modules/envio/evm.schema.json
+name: algora
+networks:
+- id: 10
+  start_block: 0
+  contracts:
+  - name: Governor
+    address:
+    - 0xcDF27F107725988f2261Ce2256bDfCdE8B382B10
+    handler: src/EventHandlers.ts
+    events:
+    - event: AdminChanged(address previousAdmin, address newAdmin)
+    - event: BeaconUpgraded(address indexed beacon)
+    - event: Initialized(uint8 version)
+    - event: ManagerSet(address indexed oldManager, address indexed newManager)
+    - event: ProposalCanceled(uint256 proposalId)
+    - event: ProposalCreated(uint256 proposalId, address proposer, address[] targets, uint256[] values, string[] signatures, bytes[] calldatas, uint256 startBlock, uint256 endBlock, string description)
+    - event: ProposalDeadlineUpdated(uint256 proposalId, uint64 deadline)
+    - event: ProposalExecuted(uint256 proposalId)
+    - event: ProposalQueued(uint256 proposalId, uint256 eta)
+    - event: ProposalThresholdSet(uint256 oldProposalThreshold, uint256 newProposalThreshold)
+    - event: ProposalTypeUpdated(uint256 indexed proposalId, uint8 proposalType)
+    - event: TimelockChange(address oldTimelock, address newTimelock)
+    - event: Upgraded(address indexed implementation)
+    - event: VoteCast(address indexed voter, uint256 proposalId, uint8 support, uint256 weight, string reason)
+    - event: VoteCastWithParams(address indexed voter, uint256 proposalId, uint8 support, uint256 weight, string reason, bytes params)
+    - event: VotingDelaySet(uint256 oldVotingDelay, uint256 newVotingDelay)
+    - event: VotingPeriodSet(uint256 oldVotingPeriod, uint256 newVotingPeriod)

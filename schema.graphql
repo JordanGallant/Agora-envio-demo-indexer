@@ -1,0 +1,111 @@
+type Governor_AdminChanged {
+  id: ID!
+  previousAdmin: String!
+  newAdmin: String!
+}
+
+type Governor_BeaconUpgraded {
+  id: ID!
+  beacon: String!
+}
+
+type Governor_Initialized {
+  id: ID!
+  version: BigInt!
+}
+
+type Governor_ManagerSet {
+  id: ID!
+  oldManager: String!
+  newManager: String!
+}
+
+type Governor_ProposalCanceled {
+  id: ID!
+  proposalId: BigInt!
+}
+
+type Governor_ProposalCreated {
+  id: ID!
+  proposalId: BigInt!
+  proposer: String!
+  targets: [String!]!
+  values: [BigInt!]!
+  signatures: [String!]!
+  calldatas: [String!]!
+  startBlock: BigInt!
+  endBlock: BigInt!
+  description: String!
+}
+
+type Governor_ProposalDeadlineUpdated {
+  id: ID!
+  proposalId: BigInt!
+  deadline: BigInt!
+}
+
+type Governor_ProposalExecuted {
+  id: ID!
+  proposalId: BigInt!
+}
+
+type Governor_ProposalQueued {
+  id: ID!
+  proposalId: BigInt!
+  eta: BigInt!
+}
+
+type Governor_ProposalThresholdSet {
+  id: ID!
+  oldProposalThreshold: BigInt!
+  newProposalThreshold: BigInt!
+}
+
+type Governor_ProposalTypeUpdated {
+  id: ID!
+  proposalId: BigInt!
+  proposalType: BigInt!
+}
+
+type Governor_TimelockChange {
+  id: ID!
+  oldTimelock: String!
+  newTimelock: String!
+}
+
+type Governor_Upgraded {
+  id: ID!
+  implementation: String!
+}
+
+type Governor_VoteCast {
+  id: ID!
+  voter: String!
+  proposalId: BigInt!
+  support: BigInt!
+  weight: BigInt!
+  reason: String!
+}
+
+type Governor_VoteCastWithParams {
+  id: ID!
+  voter: String!
+  proposalId: BigInt!
+  support: BigInt!
+  weight: BigInt!
+  reason: String!
+  params: String!
+}
+
+type Governor_VotingDelaySet {
+  id: ID!
+  oldVotingDelay: BigInt!
+  newVotingDelay: BigInt!
+}
+
+type Governor_VotingPeriodSet {
+  id: ID!
+  oldVotingPeriod: BigInt!
+  newVotingPeriod: BigInt!
+}
+
